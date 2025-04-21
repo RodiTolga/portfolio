@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #444;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.hamburgerIcon div {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+}
+
+header li {
+    list-style: none;
+}
+
+header a {
+    text-decoration: none;
+    color: #444;
+}
+
+@media screen and (min-width: 768px) {
+    .hamburgerIcon {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    header ul {
+        display: block; 
+    }
+}
