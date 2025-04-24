@@ -6,21 +6,22 @@
     <title>Rodi Zayif - Data Analyst</title>
     <!-- TO DO: ADD ICON -->
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
   </head>
   <body>
     <header>
-      <h1>Rodi Zayif</h1>
       <nav id="navigation">
+        <h1>Rodi Zayif</h1>
         <button
           class="hamburgerIcon"
           href="javascript:void(0)"
-          onclick="myFunction()"
+          onclick="toggleBurgerIcon(this)"
         >
-          <div></div>
-          <div></div>
-          <div></div>
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
         </button>
-        <ul>
+        <ul id="navigationLinks" class="hideMenu">
           <li>
             <!-- TO DO: ADD HIGHLIGHT FOR CURRENT TAB -->
             <a href="#home">Home</a>
