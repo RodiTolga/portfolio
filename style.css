@@ -64,6 +64,58 @@ header a {
     display: none;
 }
 
+.projectContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    box-shadow: rgb(0, 0, 0, 0.12) 0px 4px 8px -2px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card h3 {
+    font-weight: 500;
+    color: #37352f;
+}
+
+.toolsWrapper span:first-child {
+    background-color: rgb(238, 187, 199);
+    border-radius: 3px;
+    padding: 2px 6px;
+    margin-right: 5px;
+    color: #37352f;
+    text-align: center;
+}
+
+.toolsWrapper {
+    margin-bottom: 10px;
+}
+
+a.projectLink {
+    color: #37352f;
+    text-decoration: underline;
+}
+
+.toolsWrapper span {
+    background-color: rgb(224, 224, 224);
+    color: #37352f;
+    border-radius: 3px;
+    padding: 2px 6px;
+    margin-right: 5px;
+}
+
+
+
+
 @media screen and (min-width: 768px) {
     .hamburgerIcon {
         display: none;
@@ -79,3 +131,4 @@ header a {
         text-align: center;
     }
 }
+
