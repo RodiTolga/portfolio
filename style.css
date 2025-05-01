@@ -5,10 +5,82 @@ body {
     color: #444;
 }
 
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+  }
+
+  #hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #222;
+  }
+
+  #hero h2 {
+    font-size: 1.5rem;
+    color: #666;
+  }
+
+  section {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  #socials {
+    text-align: right;
+    padding-right: 5%;
+  }
+
+  #socials h2 {
+    text-align: right;
+  }
+
+  #socials ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #socials li {
+    margin-bottom: 0.5rem;
+  }
+
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+#socials {
+    align-items: flex-end;
+    text-align: right;
+    margin-right: 60px;
+}
+
+#socials h2 {
+    text-align: right;
+}
+
+#socials a:hover {
+    transform: translateY(-2px);
 }
 
 .hamburgerIcon {
@@ -66,16 +138,22 @@ header a {
 
 .projectContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-}
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
 .card {
-    box-shadow: rgb(0, 0, 0, 0.12) 0px 4px 8px -2px;
-    cursor: pointer;
-    border-radius: 10px;
-    width: 100%;
-    overflow: hidden;
+  box-shadow: rgb(0, 0, 0, 0.12) 0px 4px 8px -2px;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;           /* Ensure it stretches fully */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card a {
@@ -113,17 +191,77 @@ a.projectLink {
     margin-right: 5px;
 }
 
+header ul#navigationLinks li {
+    flex: 1; /* gives equal space to each item */
+    text-align: center;
+  }
 
-
-
-@media screen and (min-width: 768px) {
+  header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  header ul li {
+    margin: 0;
+  }
+  
+  header ul a {
+    text-decoration: none;
+    color: #444;
+    display: block;
+    padding: 1rem;
+  }
+  
+  /* Responsive nav styles */
+  @media screen and (min-width: 768px) {
     .hamburgerIcon {
-        display: none;
+      display: none;
     }
+  
     header ul#navigationLinks {
-        display: block;
+      display: flex !important;            /* show nav on larger screens */
+      justify-content: space-evenly;       /* space links equally */
+      width: 100%;
     }
-}
+  
+    header ul#navigationLinks li {
+      flex: 1;                              /* each link takes equal width */
+      text-align: center;
+    }
+  
+    .hideMenu {
+      display: none;                        /* only matters on mobile */
+    }
+  }
+
+  
+  @media screen and (min-width: 1200px) {
+    .projectContainer {
+      grid-template-columns: repeat(3, 1fr); /* Force max 5 columns */
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    header ul#navigationLinks {
+      display: block;
+      text-align: center;
+    }
+  
+    .hamburgerIcon {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    header ul#navigationLinks {
+      display: flex !important;
+    }
+  
+    .hideMenu {
+      display: none; /* only relevant for small screens */
+    }
+  }
 
 @media screen and (max-width: 769px) {
     header ul {
@@ -131,4 +269,3 @@ a.projectLink {
         text-align: center;
     }
 }
-
